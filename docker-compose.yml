@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  web:
+    image: pythonflask_web
+    container_name: my_flask_app
+    ports:
+      - "5000:5000"
+    volumes:
+      - ./app:/app
+  mongodb:
+    image: mongo:latest
+    ports:
+      - "27017:27017"
+    container_name: my_mongo_db
